@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f6f6f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Start of navbar */
+header {
+    display: flex;
+    width: 90%;
+    margin-top: 15px;
+    margin-left: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container,
+.nav-links {
+    display: flex;
+}
+
+.logo {
+    margin: 40px 10px;
+    color: #e9474b;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-container img {
+    width: 20%;
+}
+
+nav {
+    flex: 2;
+}
+
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-link {
+    color: #e9474b;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    nav ul {
+
+        flex-direction: column;
+        text-align: center;
+        height: 230px;
+
+    }
+}
+
+/* End of Navbar */
+
+
+/* Start of Hero */
+.preImage {
+    width: 100%;
+    height: 525px;
+}
+
+.presentation {
+    margin-top: -12px;
+}
+
+.presentation-image {
+    position: relative;
+}
+
+.presentation-text {
+    position: absolute;
+    bottom: 4px;
+    right: 0px;
+    background-color: #E9474B;
+    color: white;
+    padding: 25px;
+    height: 525px;
+}
+
+.presentation-text input {
+    padding: 15px;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.presentation-subText1 {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.presentation-subText2 {
+    line-height: 25px;
+}
+
+.button {
+    padding: 15px;
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+}
+/* End of Hero */
+
+/* Start of our Recipes */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.ourRecipes {
+    background-color: #e9474b;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.border-right {
+    border-right: 25px solid #000;
+}
+
+.contentBx {
+    display: flex;
+    padding: 25px;
+}
+
+.label {
+    position: relative;
+    margin: 25px;
+    bottom: 70px;
+    left: 200px;
+    font-size: 25px;
+}
+
+.accordian h1 {
+    margin-left: 25px;
+}
+
+.accordian .contentBx .label::before {
+    content: '+';
+    position: absolute;
+    left: 180px;
+}
+
+.accordian .contentBx .container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+
+}
+
+.accordian .contentBx:active .container {
+    height: 150px;
+}
+
+.content {
+    padding-left: 25px;
+    /* border-right: 5px solid ; */
+}
+
+.content2 {
+    padding-left: 25px;
+    margin-top: 27px;
+}
+/* End of our recipes */
+
+/* Start of food library/cards */
+.main {
+    margin-left: 95px;
+}
+
+.cards {
+    width: 18%;
+    display: grid;
+    padding: 10px;
+    margin-top: 60px;
+    margin-left: 60px;
+    display: inline-block;
+    justify-content: center;
+}
+
+.cards:hover {
+    background-color: #eeeeee;
+    transform: scale(1.1);
+}
+
+.cardImage img {
+    width: 100%;
+    height: 250px;
+}
+
+.card-subhead {
+    float: right;
+    padding-right: 10px;
+}
+
+.return {
+    font-weight: 600;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: 30px;
+    color: #e9474b;
+    text-decoration: none;
+    display: block;
+}
+
+@media only screen and (max-width: 800px) {
+    div .cards {
+        display: flexbox;
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+        /* background-color: blue; */
+    }
+}
+
+/* End of food library/cards */
+
+
+/* Start of news letter */
+.users {
+    width: 100%;
+    background: #e9474b;
+    color: white;
+    padding: 35px;
+}
+
+.users-list {
+    margin-left: 45px;
+}
+
+form .user-details {
+    display: flex;
+    padding: 10px;
+}
+
+.user-name {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+}
+
+.user-inputBox {
+    margin: 25px;
+}
+
+.wrapper-remove {
+    margin-left: 650px;
+    margin-top: 15px;
+    color: #e9474b;
+    padding: 10px 35px 10px;
+    font-size: 20px;
+}
+
+.user-remove {
+    padding: 10px 35px 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.user-addFriend {
+    padding: 12px 35px 12px;
+    margin-left: 35px;
+}
+
+@media only screen and (max-width: 800px) {
+    .users form {
+        display: flexbox;
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+        /* background-color: blue; */
+    }
+}
+
+/*End of newsletter */
+
+/* Start of footer */
+.footer-main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    list-style: none
+}
+
+.card2 {
+    margin: 15px;
+    background: #fff;
+    flex-basis: 33%;
+    padding: 40px;
+    color: #4a4a4a;
+}
+
+@media only screen and (max-width: 800px) {
+    .card2-head {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        background-color: blue;
+    }
+}
+
+/* End of footer */
