@@ -1,14 +1,13 @@
 
-
 let col = document.getElementById("collapse");
 let content = document.getElementById("contentBx");
 let span = document.getElementById("symbol");
 let i;
 let id = 0;
-let Name = document.getElementById("fname"),
-  Surname = document.getElementById("lname"),
-  Email = document.getElementById("email"),
-  user = document.getElementById("user");
+let Name = document.getElementById("fname");
+let Surname = document.getElementById("lname");
+let Email = document.getElementById("email");
+let user = document.getElementById("user");
 
 
 const recipe = () => {
