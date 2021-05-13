@@ -13,6 +13,8 @@ html {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    list-style: none;
+    text-decoration: none;
 }
 
 /* Start of navbar */
@@ -124,132 +126,160 @@ nav {
     font-size: 15px;
     border-radius: 5px;
 }
+
 /* End of Hero */
 
-/* Start of our Recipes */
+/* Filter Recipe CSS */
 
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+/***sectionOne : start ***/
+.container__filterRecipe {
+    background-color: #F6F6F6;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
 
-/* Create a custom radio button */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
-    background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked~.checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked~.checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.ourRecipes {
-    background-color: #e9474b;
-    padding: 25px;
-    margin-top: 20px;
-}
-
-.border-right {
-    border-right: 25px solid #000;
-}
-
-.contentBx {
+.container__accordian {
+    padding: 20px 50px;
+    margin: 0px 40px 0px 37px;
     display: flex;
-    padding: 25px;
+    flex-direction: row;
 }
 
-.label {
+.container__accordian h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.contentBx_list {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+}
+
+.contentBx_list div {
+    flex: 1;
+}
+
+@media(max-width: 575px) {
+    .contentBx_list div {
+        flex: 100%;
+    }
+}
+
+.contentBx_list label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.135px;
+}
+
+.search {
+    padding: 40px 0px 0px 0px;
+    margin-left: auto;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+
+}
+
+
+.checkbox input {
     position: relative;
-    margin: 25px;
-    bottom: 70px;
-    left: 200px;
-    font-size: 25px;
+    margin: 0px 10px 10px 0px;
 }
 
-.accordian h1 {
-    margin-left: 25px;
-}
-
-.accordian .contentBx .label::before {
-    content: '+';
+.checkbox input::before {
     position: absolute;
-    left: 180px;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.3s all ease;
 }
 
-.accordian .contentBx .container {
-    position: relative;
-    height: 0;
+.checkbox input:checked::before {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.checkbox input:checked::after {
+    position: absolute;
+    content: "\2713";
+    font-size: 15px;
+    color: #000;
+    font-weight: 700;
+    bottom: 1.4px;
+    top: -3.8px;
+}
+
+
+
+/*****collapse ***/
+
+#collapse {
+    background: #E9474B;
+    color: #F6F6F6;
+    border: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.135px;
+    margin: 10px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.plusSymbol::after {
+    content: var(--content, "+");
+    color: #fff;
+    font-size: 20px;
+}
+
+.minusSymbol::after {
+    content: var(--content, "-");
+    color: #fff;
+    font-size: 20px;
+}
+
+
+.contentBx_list h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.15px;
+    margin: 12px;
+}
+
+#contentBx {
+    padding: 25px;
+    display: none;
     overflow: hidden;
+    background: #E9474B;
+    color: #F6F6F6;
     transition: 0.5s;
-    overflow-y: auto;
-
+    border-radius: 10px;
+    position: absolute;
+    top: 740px;
 }
-
-.accordian .contentBx:active .container {
-    height: 150px;
-}
-
-.content {
-    padding-left: 25px;
-    /* border-right: 5px solid ; */
-}
-
-.content2 {
-    padding-left: 25px;
-    margin-top: 27px;
-}
-/* End of our recipes */
 
 /* Start of food library/cards */
 .main {
@@ -305,72 +335,143 @@ nav {
 
 
 /* Start of news letter */
-.users {
-    width: 100%;
-    background: #e9474b;
-    color: white;
-    padding: 35px;
+
+.container__newsletter {
+    background-color: #E9474B;
 }
 
-.users-list {
-    margin-left: 45px;
-}
-
-form .user-details {
-    display: flex;
-    padding: 10px;
-}
-
-.user-name {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.user-input {
-    padding: 12px;
-    border-radius: 5px;
-    border: none;
-}
-
-.user-inputBox {
-    margin: 25px;
-}
-
-.wrapper-remove {
-    margin-left: 650px;
-    margin-top: 15px;
-    color: #e9474b;
-    padding: 10px 35px 10px;
-    font-size: 20px;
-}
-
-.user-remove {
-    padding: 10px 35px 10px;
-    text-decoration: none;
+.container__newsletter__section {
+    padding: 80px 50px;
+    margin: 0px 40px 0px 37px;
     color: #fff;
-    font-size: 20px;
 }
 
-.user-addFriend {
-    padding: 12px 35px 12px;
-    margin-left: 35px;
+.container__newsletter__section h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    letter-spacing: 0.52px;
+    line-height: 46px;
+
 }
 
-@media only screen and (max-width: 800px) {
-    .users form {
-        display: flexbox;
-        flex-direction: row;
-        height: auto;
-        width: 100%;
-        /* background-color: blue; */
+.container__newsletter__section p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.23px;
+    line-height: 26px;
+    margin: 12px 0px;
+}
+
+@media(max-width:768px) {
+    .container__newsletter__section h2 {
+        font-size: 30px;
+        line-height: 36px;
     }
+
+    .container__newsletter__section p {
+        font-size: 15px;
+    }
+}
+
+.form-userSignup ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.form-userSignup input {
+    margin: 10px 71px 0px 0px;
+    padding: 20px 95px 15px 30px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    background: #F6F6F6;
+    width: 325px;
+}
+
+.form-userSignup label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.23px;
+    line-height: 21px;
+}
+
+.form-userSignup input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #4A4A4A;
+}
+
+.add__button input[type="submit"] {
+    background: transparent;
+    padding: 12px 60px;
+    color: #ffffff;
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    margin: 30px 0px 0px 16px;
+    font-weight: 700;
+    cursor: pointer !important;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    width: 200px;
+}
+
+.send__button {
+    position: relative;
+}
+
+.send__button button {
+    background: #fff;
+    color: #4A4A4A;
+    padding: 10px 35px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.23px;
+    margin: 25px 0px 0px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user {
+    border-bottom: 1.5px solid #fff;
+}
+
+.icon {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    letter-spacing: 0.234px;
+    padding: 10px;
+    margin: 20px 0px 0px 20px;
+    cursor: pointer;
+    position: relative;
+    top: 2.5rem;
+}
+
+.icon i {
+    margin-right: 12px;
 }
 
 /*End of newsletter */
 
 /* Start of footer */
 .footer-main {
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
     display: flex;
     list-style: none
@@ -385,11 +486,8 @@ form .user-details {
 }
 
 @media only screen and (max-width: 800px) {
-    .card2-head {
-        display: block;
-        flex-direction: column;
+    p {
         width: 100%;
-        background-color: blue;
     }
 }
 
