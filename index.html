@@ -58,16 +58,33 @@
 
 
     <!--filterRecipes : start-->
-    <div class="container__filterRecipe">
-        <div class="container__accordian">
-            <div>
-                <h4>Our Recipes</h4>
-                <button type="button" id="collapse" onclick="recipe()">Filter recipes by
-                    <span id="symbol" class="plusSymbol"></span> </button>
+    <main>
+
+        <!--OurRecipes : start-->
+        <section class="container_filterRecipe">
+            <div class="container__filterRecipe-head">
+                <div>
+                    <h4>Our Recipes</h4>
+                    <button type="button" id="collapse" onClick="recipe()">Filter recipes by
+                        <span id="symbol" class="plusSymbol"></span> </button>
+                </div>
+                <div class="sort">
+                    <span for="sort">Sort by
+                        <select name="sort" id="sort">
+                            <option value="Newest First">Newest First</option>
+                            <option value="Oldest First">Oldest First</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="search">
+                    <a href="#" class="fa fa-search"></a>
+                    <input type="text" placeholder=" Search recipe">
+                </div>
             </div>
-            <div id="contentBx">
-                <div class="contentBx_list">
-                    <div>
+
+            <div id="content">
+                <div class="content__foodType">
+                    <div class="content__foodType__list">
                         <h5>Food Type:</h5>
                         <ul>
                             <li>
@@ -130,7 +147,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="accordian__menu">
                         <ul>
                             <li>
                                 <div class="checkbox">
@@ -161,7 +178,7 @@
                         </ul>
                     </div>
 
-                    <div>
+                    <div class="accordian__menu">
                         <ul>
                             <li>
                                 <div class="checkbox">
@@ -193,7 +210,7 @@
                     </div>
                 </div>
             </div>
-            <div style="padding: 53px 34px 0px 34px;">
+            <div class="sortMobileView">
                 <span for="sort">Sort by
                     <select name="sort" id="sort">
                         <option value="Newest First">Newest First</option>
@@ -201,12 +218,15 @@
                     </select>
                 </span>
             </div>
-            <div class="search">
+            <div class="searchMobileView">
                 <a href="#" class="fa fa-search"></a>
                 <input type="text" placeholder=" Search recipe">
             </div>
-        </div>
-    </div>
+        </section>
+        <!--OurRecipes : end-->
+
+
+    </main>
     <!--filterRecipes : end-->
 
     <!-- 

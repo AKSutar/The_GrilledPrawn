@@ -1,6 +1,6 @@
 
 let col = document.getElementById("collapse");
-let content = document.getElementById("contentBx");
+let content = document.getElementById("content");
 let span = document.getElementById("symbol");
 let i;
 let id = 0;

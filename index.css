@@ -131,49 +131,60 @@ nav {
 
 /* Filter Recipe CSS */
 
-/***sectionOne : start ***/
-.container__filterRecipe {
+/***filter recipe : start ***/
+
+.container_filterRecipe {
     background-color: #F6F6F6;
 }
 
-
-.container__accordian {
+.container__filterRecipe-head {
     padding: 20px 50px;
     margin: 0px 40px 0px 37px;
     display: flex;
     flex-direction: row;
 }
 
-.container__accordian h4 {
+.container__return {
+    padding: 20px 0px;
+    margin: 0px 35px 0px 33px;
+}
+
+
+@media(max-width: 575px) {
+    .container__filterRecipe-head {
+        display: block;
+        padding: 20px 25px;
+    }
+}
+
+.container__filterRecipe-head h4 {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     font-weight: 700;
 }
 
-
-.contentBx_list {
-    display: flex;
-    flex-wrap: wrap;
-    float: right;
+.sort {
+    padding: 53px 34px 0px 34px;
 }
 
-.contentBx_list div {
-    flex: 1;
-}
-
-@media(max-width: 575px) {
-    .contentBx_list div {
-        flex: 100%;
-    }
-}
-
-.contentBx_list label {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+.sort span {
     font-size: 18px;
-    line-height: 30px;
+    font-family: 'Roboto';
+    line-height: 21px;
     letter-spacing: 0.135px;
+
+}
+
+.sort select {
+    font-size: 16px;
+    font-family: 'Roboto';
+    line-height: 21px;
+    letter-spacing: 0.135px;
+    font-weight: bold;
+    padding: 8px 30px;
+    margin: -7px 13px;
+    border-radius: 3px;
+    border: 1px solid #000;
 }
 
 .search {
@@ -185,47 +196,12 @@ nav {
     border: none;
     outline: none;
     padding: 10px 20px;
-    border-radius: 2px;
-
-}
-
-
-.checkbox input {
-    position: relative;
-    margin: 0px 10px 10px 0px;
-}
-
-.checkbox input::before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    background-color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: 0.3s all ease;
-}
-
-.checkbox input:checked::before {
-    background: #fff;
-    border: 1px solid #fff;
-}
-
-.checkbox input:checked::after {
-    position: absolute;
-    content: "\2713";
-    font-size: 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
     color: #000;
-    font-weight: 700;
-    bottom: 1.4px;
-    top: -3.8px;
+
 }
-
-
 
 /*****collapse ***/
 
@@ -258,8 +234,15 @@ nav {
     font-size: 20px;
 }
 
+.sortMobileView {
+    display: none;
+}
 
-.contentBx_list h5 {
+.searchMobileView {
+    display: none;
+}
+
+.content__foodType h5 {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -269,17 +252,236 @@ nav {
     margin: 12px;
 }
 
-#contentBx {
-    padding: 25px;
+#content {
+    padding: 0 12px;
     display: none;
     overflow: hidden;
     background: #E9474B;
     color: #F6F6F6;
     transition: 0.5s;
-    border-radius: 10px;
-    position: absolute;
-    top: 740px;
+    margin: -22px 88px 0px 87px;
+    padding: 20px 2px;
+    position: relative;
+    z-index: 2;
 }
+
+.content__foodType {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 20px;
+
+}
+
+.content__foodType__list{
+    border-right: 2px solid #fff;
+    position: relative;
+    margin-right: 25px;
+}
+
+.content__foodType div {
+    flex: 1;
+}
+
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recipe div {
+    flex: 40%;
+}
+
+.content__foodType label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.135px;
+}
+
+.checkbox input {
+    position: relative;
+    margin: 0px 10px 10px 0px;
+}
+
+
+.checkbox input::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.checkbox input:checked::before {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.checkbox input:checked::after {
+    position: absolute;
+    content: "\2713";
+    font-size: 15px;
+    color: #000;
+    font-weight: 700;
+    bottom: 1.4px;
+    top: -3.8px;
+}
+
+@media(max-width: 500px) {
+    .container__filterRecipe-head h4 {
+        font-size: 19px;
+        margin-left: 50px;
+    }
+
+    #collapse {
+        margin-left: 28px !important;
+    }
+
+    #content {
+        margin: -22px 88px 0px 85px;
+    }
+
+    .sortMobileView {
+        padding: 18px 10px 0px 0px !important;
+    }
+
+    .container__filterRecipe-head {
+        padding: 20px 20px;
+    }
+}
+
+@media(max-width: 800px) {
+    .container__filterRecipe-head h4 {
+        font-size: 20px;
+    }
+
+    .content__foodType label {
+        font-size: 13px;
+    }
+
+    .content__foodType h5 {
+        font-size: 16px;
+    }
+
+    .checkbox input::before {
+        width: 14px;
+        height: 14px;
+    }
+
+    .checkbox input:checked::after {
+        font-size: 14px;
+    }
+
+    .sort {
+        display: none;
+    }
+
+    .sortMobileView {
+        padding: 25px 10px 0px 0px;
+        display: block;
+    }
+
+    .sortMobileView span {
+        font-size: 16px;
+        font-family: 'Roboto';
+        line-height: 21px;
+        letter-spacing: 0.135px;
+        margin-left: 87px;
+
+    }
+
+    .sortMobileView select {
+        font-size: 10px;
+        font-family: 'Roboto';
+        line-height: 21px;
+        letter-spacing: 0.135px;
+        font-weight: bold;
+        padding: 8px 15px;
+        margin: -7px 13px;
+        border-radius: 3px;
+        border: 1px solid #000;
+        display: block;
+        margin-left: 87px;
+        margin-top: 10px;
+    }
+
+    .searchMobileView {
+        padding-top: 38px;
+        margin-left: auto;
+        display: block;
+        margin-left: 87px;
+    }
+
+    .searchMobileView input {
+        border: none;
+        outline: none;
+        padding: 6px 0px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+
+    }
+
+    .search {
+        display: none;
+    }
+
+
+
+    .accordian__menu {
+        margin-top: 45px;
+    }
+
+    .plusSymbol::after {
+        font-size: 14px;
+    }
+
+    .minusSymbol::after {
+        font-size: 14px;
+    }
+
+    #collapse {
+        margin: 10px 10px 0px 0px;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .accordian__menu {
+        margin-top: 45px;
+    }
+}
+
+@media(max-width: 575px) {
+    .container__one h4 {
+        font-size: 23px;
+    }
+
+    .container__one {
+        padding: 20px 40px;
+    }
+}
+
+@media(max-width: 575px) {
+    .content__foodType div {
+        flex: 100%;
+    }
+}
+
+/***filter recipe : end ***/
+
 
 /* Start of food library/cards */
 .main {
